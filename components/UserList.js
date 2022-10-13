@@ -37,7 +37,7 @@ export default function UserList() {
 //Fetch data not working
   const getData = async()=>{
     try{
-      const fetchdata = await fetch('https://reqres.in/api/users')
+      const fetchdata = await fetch('https://jsonplaceholder.typicode.com/users/')
       const toJson = await fetchdata.json()
       setUsers(toJson)
       console.log(users)
@@ -52,7 +52,7 @@ export default function UserList() {
   const Card = (props) => {
     return (
       <View style={{flex:1, flexDirection:'row',justifyContent:'flex-start',alignItems:'center',borderWidth: 1,borderRadius: 15,marginBottom: 10,backgroundColor:'gray'}}>
-        <Image style={{ width: 50, height: 50, borderRadius: 20 }} source={{uri : props.imgurl}} />
+        <Image style={{ width: 50, height: 50, borderRadius: 20 }} source={{uri : 'https://i.imgur.com/rRmL2ii.png'}} />
       <View style={{padding: 5}}>
         <Text style={{marginBottom:5}}>{props.name}</Text>
         <Text>{props.email}</Text>
@@ -65,10 +65,10 @@ export default function UserList() {
   return (
     <View style={styles.container}>
       <FlatList
-        data={fakeData}
+        data={users}
         renderItem={({item}) =>
           <View>
-            <Card name={item.first_name} email={item.email} imgurl={item.avater} />
+            <Card name={item.name} email={item.email} />
           </View>}
         keyExtractor={item => item.id}
       />

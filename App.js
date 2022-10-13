@@ -10,6 +10,7 @@ import { StyleSheet,TextInput} from 'react-native';
 import { Formik } from 'formik';
 import * as yup from 'yup'
 import UserList from './components/UserList';
+import Stolen from './components/Stolen';
 
 
 
@@ -94,6 +95,7 @@ function MyDrawer(){
         <Drawer.Screen name="Home" component={HomeScreen}  />
       <Drawer.Screen name="Favourite" component={FavouriteScreen} />
       <Drawer.Screen name="Users" component={UserList} />
+      <Drawer.Screen name="Stolen" component={Stolen} />
       <Drawer.Screen name="Team" component={MyTabs} />
       </Drawer.Navigator>
       
